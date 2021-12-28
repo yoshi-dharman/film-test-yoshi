@@ -39,10 +39,11 @@ module.exports = {
     },
 
     addFilm : (req, res) => {
-        let data = db.push('data2', req.body);
+        db.push('data', req.body);
+        let newData = db.get('data')
         return res.json({
             message : "Success Add Film",
-            data
+            data : newData
         })
     },
 
