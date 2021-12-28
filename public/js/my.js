@@ -1,11 +1,12 @@
+// API
+const api = "https://film-test-yoshi.herokuapp.com/film";
+
 // GET DATA
 const getFilmList = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     let search = urlParams.get('search');
 
     if(!search){
-        const api = "https://film-test-yoshi.herokuapp.com/film";
-
         fetch(api)
         .then((response) => response.json())
         .then((res) => {
@@ -14,9 +15,7 @@ const getFilmList = async () => {
         })
         .catch((error) => console.log("error ",error ));
     } else {
-        const api = "https://film-test-yoshi.herokuapp.com/film/"+search;
-
-        fetch(api)
+        fetch(api+"/"+search)
         .then((response) => response.json())
         .then((res) => {
             localStorage.data = JSON.stringify(res.data);
@@ -118,7 +117,7 @@ searchBtn.addEventListener("click", searchData);
 let deleteData = async (index) => {
     on();
     let data = JSON.parse(localStorage.data);
-    const api = "https://film-test-yoshi.herokuapp.com/film/";
+
     let options = {
         method: "DELETE",
         mode: "cors",
@@ -160,7 +159,6 @@ let addData = async (e) => {
         watch : document.querySelector("#inputWatch").value,
     }
     
-    const api = "https://film-test-yoshi.herokuapp.com/film/";
     let options = {
         method: "POST",
         mode: "cors",
