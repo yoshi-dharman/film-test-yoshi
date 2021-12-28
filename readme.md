@@ -1,6 +1,19 @@
 # Film List
 
-Test Project.
+Get List of Film from backend with database .JSON,
+
+If you want to change API URL for the UI, open folder "public/js/my.js/" and change line 2
+
+```javascript
+const api = "(Change Here)";
+```
+
+Feature : 
+-
+1. Add & Delete Data 
+2. Search
+3. Loading Response
+4. Pagination
 
 ## Installation
 
@@ -12,7 +25,9 @@ npm run dev
 ```
 
 ## UI
-Just use "index.htm" inside the folder
+Simple UI, just use "index.htm" inside the folder.
+
+index.html get the data from [Heroku](https://film-test-yoshi.herokuapp.com/film)
 
 ## API
 Already deploy via [Heroku](https://film-test-yoshi.herokuapp.com/film)
